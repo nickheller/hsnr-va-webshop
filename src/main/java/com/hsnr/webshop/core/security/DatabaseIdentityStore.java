@@ -27,7 +27,7 @@ public class DatabaseIdentityStore implements IdentityStore {
 
             if (benutzer != null && benutzer.getPasswort().equals(upc.getPasswordAsString())) {
                 Set<String> rollen = new HashSet<>();
-                rollen.add(benutzer.getRolle()); // z. B. "admin", "kunde", ...
+                rollen.add(benutzer.getRolle());
                 return new CredentialValidationResult(benutzer.getBenutzerkennung(), rollen);
             }
         }

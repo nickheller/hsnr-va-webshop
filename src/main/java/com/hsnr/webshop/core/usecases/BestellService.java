@@ -85,9 +85,8 @@ public class BestellService {
         }
 
         bestellung.setStatus("storniert");
-        bestellRepo.save(bestellung); // Änderung persistieren
+        bestellRepo.save(bestellung);
 
-        // Optional: Bestand zurückbuchen
         for (Bestellposition pos : bestellung.getPositionen()) {
             Produkt p = pos.getProdukt();
             p.setBestand(p.getBestand() + pos.getMenge());

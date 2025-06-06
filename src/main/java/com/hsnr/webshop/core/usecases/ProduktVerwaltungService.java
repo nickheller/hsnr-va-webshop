@@ -25,7 +25,6 @@ public class ProduktVerwaltungService {
         if (produkt == null) {
             throw new IllegalStateException("Produkt nicht gefunden.");
         }
-        // Beispielprüfung: darf nicht gelöscht werden, wenn Bestand == 0 (du kannst auch auf Bestellung prüfen)
         if (produkt.getBestand() <= 0) {
             produktRepo.delete(produkt);
         } else {

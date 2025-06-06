@@ -18,10 +18,8 @@ public class Kunde implements Serializable {
     private LocalDate geburtsdatum;
     private String zahlungsmethode;
 
-    // Standard-Konstruktor
     public Kunde() {}
 
-    // Getter & Setter
     public Long getKundennummer() { return kundennummer; }
     public void setKundennummer(Long kundennummer) { this.kundennummer = kundennummer; }
 

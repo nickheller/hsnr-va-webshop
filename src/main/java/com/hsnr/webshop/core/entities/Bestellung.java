@@ -14,7 +14,7 @@ public class Bestellung implements Serializable {
 
     private LocalDate bestelldatum;
 
-    private String status; // z. B. "in Bearbeitung", "versendet", "storniert"
+    private String status;
 
     private String lieferadresse;
     private String zahlungsmethode;

@@ -30,10 +30,7 @@ public class BenutzerVerwaltungService {
         benutzerRepo.delete(benutzer);
     }
 
-    // Optional: Benutzer nach Rolle abrufen (z. B. für Admin-UI)
     public List<Benutzer> findeBenutzerNachRolle(String rolle) {
-        // Wenn du diese Query brauchst, musst du sie im Repository ergänzen.
-        // Beispiel: SELECT b FROM Benutzer b WHERE b.rolle = :rolle
         return null;
     }
 }

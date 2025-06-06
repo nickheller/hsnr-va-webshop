@@ -87,9 +87,6 @@ public class BestellungFacade {
         service.bestellungStornieren(bestellnummer);
     }
     
-        /**
-     * Mitarbeiter markiert eine Bestellung als versendet.
-     */
     @PUT
     @Path("/versenden/{bestellnummer}")
     @RolesAllowed({"admin", "mitarbeiter"})

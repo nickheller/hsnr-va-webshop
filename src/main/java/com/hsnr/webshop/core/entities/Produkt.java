@@ -19,9 +19,8 @@ public class Produkt implements Serializable {
 
     private int bestand;
 
-    private String lieferzeit; // z. B. "5-7 Werktage", wenn ausverkauft
+    private String lieferzeit;
 
-    // --- Constructors ---
 
     public Produkt() {
     }
@@ -35,7 +34,6 @@ public class Produkt implements Serializable {
         this.lieferzeit = lieferzeit;
     }
 
-    // --- Getter & Setter ---
 
     public Long getProduktnummer() {
         return produktnummer;
