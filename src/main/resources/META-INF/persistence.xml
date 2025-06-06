@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+
+    <persistence-unit name="my_persistence_unit" transaction-type="JTA">
+        <class>core.entities.Produkt</class>
+        <class>core.entities.Kunde</class>
+        <class>core.entities.Benutzer</class>
+        <class>core.entities.Bestellung</class>
+        <class>core.entities.Bestellposition</class>
+        <class>core.entities.Feedback</class>
+
+    </persistence-unit>
+</persistence>
