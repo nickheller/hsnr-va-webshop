@@ -4,6 +4,7 @@ import com.hsnr.webshop.core.entities.Benutzer;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import java.util.List;
 
 @Stateless
 public class BenutzerRepository {
@@ -29,4 +30,7 @@ public class BenutzerRepository {
         }
         em.remove(benutzer);
     }
+    public List<Benutzer> findAll() {
+    return em.createQuery("SELECT b FROM Benutzer b", Benutzer.class).getResultList();
+}
 }
