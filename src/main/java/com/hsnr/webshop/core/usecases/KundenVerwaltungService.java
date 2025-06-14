@@ -1,6 +1,5 @@
 package com.hsnr.webshop.core.usecases;
 
-
 import com.hsnr.webshop.core.entities.Kunde;
 import com.hsnr.webshop.core.dataaccess.KundeRepository;
 import jakarta.ejb.Stateless;
@@ -25,7 +24,12 @@ public class KundenVerwaltungService {
         return kundeRepo.findById(id);
     }
 
+    public Kunde findeKundeNachBenutzerkennung(String benutzerkennung) {
+        return kundeRepo.findByBenutzerkennung(benutzerkennung);
+    }
+
     public List<Kunde> alleKunden() {
         return kundeRepo.findAll();
     }
+    
 }

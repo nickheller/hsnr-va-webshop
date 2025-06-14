@@ -1,11 +1,15 @@
 package com.hsnr.webshop;
 
 import com.hsnr.webshop.core.dataaccess.BenutzerRepository;
+import com.hsnr.webshop.core.dataaccess.KundeRepository;
 import com.hsnr.webshop.core.entities.Benutzer;
+import com.hsnr.webshop.core.entities.Kunde;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.Singleton;
 import jakarta.ejb.Startup;
 import jakarta.inject.Inject;
+
+import java.time.LocalDate;
 
 @Startup
 @Singleton
@@ -13,6 +17,9 @@ public class InitDB {
 
     @Inject
     private BenutzerRepository benutzerRepo;
+
+    @Inject
+    private KundeRepository kundeRepo;
 
     @PostConstruct
     public void init() {
@@ -41,15 +48,27 @@ public class InitDB {
         }
 
         if (benutzerRepo.findByBenutzerkennung("kunde") == null) {
-            Benutzer kunde = new Benutzer();
-            kunde.setBenutzerkennung("kunde");
-            kunde.setPasswort("kunde123");
-            kunde.setName("Kunde Beispiel");
-            kunde.setTelefonnummer("555123456");
-            kunde.setRolle("kunde");
+            Benutzer kundeBenutzer = new Benutzer();
+            kundeBenutzer.setBenutzerkennung("kunde");
+            kundeBenutzer.setPasswort("kunde123");
+            kundeBenutzer.setName("Kunde Beispiel");
+            kundeBenutzer.setTelefonnummer("555123456");
+            kundeBenutzer.setRolle("kunde");
 
-            benutzerRepo.save(kunde);
-            System.out.println("[InitDB] Standard-Kunde angelegt");
+            benutzerRepo.save(kundeBenutzer);
+
+            // Neuen Kunden anlegen und mit Benutzer verknüpfen
+            Kunde kunde = new Kunde();
+            kunde.setAdresse("Musterstraße 1");
+            kunde.setEmail("kunde@example.com");
+            kunde.setGeburtsdatum(LocalDate.of(1990, 1, 1));
+            kunde.setTelefonnummer("555123456");
+            kunde.setZahlungsmethode("Rechnung");
+            kunde.setBenutzer(kundeBenutzer);
+
+            kundeRepo.save(kunde);
+
+            System.out.println("[InitDB] Standard-Kunde samt Kundendaten angelegt");
         }
     }
 }

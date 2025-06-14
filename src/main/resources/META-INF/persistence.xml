@@ -12,5 +12,8 @@
         <class>core.entities.Bestellposition</class>
         <class>core.entities.Feedback</class>
 
+        <properties>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+        </properties>
     </persistence-unit>
 </persistence>

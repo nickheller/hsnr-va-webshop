@@ -16,6 +16,10 @@ public class BenutzerRepository {
         em.persist(benutzer);
     }
 
+    public Benutzer findById(String benutzerkennung) {
+        return em.find(Benutzer.class, benutzerkennung);
+    }
+
     public Benutzer findByBenutzerkennung(String kennung) {
         return em.find(Benutzer.class, kennung);
     }
@@ -30,7 +34,8 @@ public class BenutzerRepository {
         }
         em.remove(benutzer);
     }
+
     public List<Benutzer> findAll() {
-    return em.createQuery("SELECT b FROM Benutzer b", Benutzer.class).getResultList();
-}
+        return em.createQuery("SELECT b FROM Benutzer b", Benutzer.class).getResultList();
+    }
 }
