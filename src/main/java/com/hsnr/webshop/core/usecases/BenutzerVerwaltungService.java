@@ -6,11 +6,9 @@ import com.hsnr.webshop.core.dataaccess.BenutzerRepository;
 import com.hsnr.webshop.core.dataaccess.KundeRepository;
 import com.hsnr.webshop.core.facade.dto.BenutzerDTO;
 import com.hsnr.webshop.core.facade.dto.NeuerBenutzerDTO;
-
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.NotFoundException;
-
 import java.util.List;
 
 @Stateless
@@ -67,10 +65,6 @@ public class BenutzerVerwaltungService {
             throw new NotFoundException("Benutzer mit Kennung '" + benutzerkennung + "' nicht gefunden");
         }
         benutzerRepo.delete(benutzer);
-    }
-
-    public List<Benutzer> findeBenutzerNachRolle(String rolle) {
-        return null; // noch nicht implementiert
     }
 
     public BenutzerDTO findeAngemeldetenBenutzer(String benutzerkennung) {

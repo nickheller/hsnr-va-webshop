@@ -5,14 +5,12 @@ import com.hsnr.webshop.core.entities.Kunde;
 import com.hsnr.webshop.core.facade.dto.KundeDTO;
 import com.hsnr.webshop.core.usecases.KundenVerwaltungService;
 import com.hsnr.webshop.core.dataaccess.BenutzerRepository;
-
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.SecurityContext;
-
 import java.util.List;
 
 @Path("/kunden")

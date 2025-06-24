@@ -11,11 +11,8 @@ public class Bestellung implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bestellnummer;
-
     private LocalDate bestelldatum;
-
     private String status;
-
     private String lieferadresse;
     private String zahlungsmethode;
     private double gesamtpreis;
@@ -28,7 +25,6 @@ public class Bestellung implements Serializable {
 
     public Bestellung() {}
 
-    // Getter & Setter...
     public Long getBestellnummer() { return bestellnummer; }
     public void setBestellnummer(Long bestellnummer) { this.bestellnummer = bestellnummer; }
 

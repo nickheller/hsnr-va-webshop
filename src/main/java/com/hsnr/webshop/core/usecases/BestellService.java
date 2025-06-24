@@ -9,7 +9,6 @@ import com.hsnr.webshop.core.entities.Produkt;
 import com.hsnr.webshop.core.entities.Bestellung;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +55,6 @@ public class BestellService {
                 throw new IllegalStateException("Nicht genügend Bestand für Produkt: " + produkt.getName());
             }
 
-            // Bestand reduzieren
             produkt.setBestand(produkt.getBestand() - pos.getMenge());
             produktRepo.update(produkt);
 

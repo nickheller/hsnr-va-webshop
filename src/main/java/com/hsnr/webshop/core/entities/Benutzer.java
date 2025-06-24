@@ -7,17 +7,14 @@ import java.io.Serializable;
 public class Benutzer implements Serializable {
 
     @Id
-    private String benutzerkennung; // Login-Name
-
+    private String benutzerkennung;
     private String passwort;
     private String name;
     private String telefonnummer;
-
-    private String rolle; // z. B. "admin", "kunde", "mitarbeiter"
+    private String rolle;
 
     public Benutzer() {}
 
-    // Getter & Setter
     public String getBenutzerkennung() { return benutzerkennung; }
     public void setBenutzerkennung(String benutzerkennung) { this.benutzerkennung = benutzerkennung; }
 

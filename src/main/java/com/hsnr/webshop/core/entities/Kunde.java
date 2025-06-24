@@ -10,7 +10,6 @@ public class Kunde implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long kundennummer;
-
     private String adresse;
     private String telefonnummer;
     private String email;
@@ -23,7 +22,6 @@ public class Kunde implements Serializable {
 
     public Kunde() {}
 
-    // Getter & Setter
     public Long getKundennummer() {
         return kundennummer;
     }

@@ -1,6 +1,5 @@
 package com.hsnr.webshop.core.facade;
 
-
 import com.hsnr.webshop.core.entities.Produkt;
 import com.hsnr.webshop.core.usecases.ProduktVerwaltungService;
 import jakarta.annotation.security.RolesAllowed;

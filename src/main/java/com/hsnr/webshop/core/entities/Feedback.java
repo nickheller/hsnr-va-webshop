@@ -17,7 +17,6 @@ public class Feedback implements Serializable {
 
     public Feedback() {}
 
-    // Getter & Setter
     public Long getNummer() { return nummer; }
     public void setNummer(Long nummer) { this.nummer = nummer; }
 

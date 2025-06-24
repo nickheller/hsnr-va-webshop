@@ -15,7 +15,6 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.SecurityContext;
 import jakarta.ws.rs.WebApplicationException;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -127,11 +126,7 @@ public class BestellungFacade {
             dto.zahlungsmethode
         );
     }
-
-    /**
-     * Neuer GET-Endpunkt: liefert alle Bestellungen des aktuell eingeloggten Kunden.
-     * GET /api/bestellungen/me
-     */
+    
     @GET
     @Path("/me")
     @RolesAllowed("kunde")

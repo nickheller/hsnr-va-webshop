@@ -11,7 +11,6 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,32 +42,35 @@ public class BenutzerFacade {
                         b.getTelefonnummer()))
                 .collect(Collectors.toList());
     }
+    
     @POST
     @RolesAllowed("admin")
     public Response benutzerAnlegen(NeuerBenutzerDTO neuerBenutzer) {
         service.benutzerAnlegen(neuerBenutzer);
         return Response.status(Response.Status.CREATED).build();
     }
+    
     @DELETE
     @Path("/{kennung}")
     @RolesAllowed("admin")
     public void benutzerLoeschen(@PathParam("kennung") String kennung) {
     service.benutzerLoeschen(kennung);
-}
- @PUT
-@Path("/{kennung}")
-@RolesAllowed("admin")
-public void aktualisiereBenutzer(@PathParam("kennung") String kennung, NeuerBenutzerDTO dto) {
-    Benutzer bestehend = service.findeBenutzer(kennung);
-    if (bestehend == null) {
-        throw new NotFoundException("Benutzer nicht gefunden");
     }
+    
+    @PUT
+    @Path("/{kennung}")
+    @RolesAllowed("admin")
+    public void aktualisiereBenutzer(@PathParam("kennung") String kennung, NeuerBenutzerDTO dto) {
+        Benutzer bestehend = service.findeBenutzer(kennung);
+        if (bestehend == null) {
+            throw new NotFoundException("Benutzer nicht gefunden");
+        }
 
-    bestehend.setName(dto.getName());
-    bestehend.setTelefonnummer(dto.getTelefonnummer());
-    bestehend.setRolle(dto.getRolle());
-    bestehend.setPasswort(dto.getPasswort());
+        bestehend.setName(dto.getName());
+        bestehend.setTelefonnummer(dto.getTelefonnummer());
+        bestehend.setRolle(dto.getRolle());
+        bestehend.setPasswort(dto.getPasswort());
 
-    service.benutzerAktualisieren(bestehend);
-}
+        service.benutzerAktualisieren(bestehend);
+    }
 }

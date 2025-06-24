@@ -9,16 +9,11 @@ public class Produkt implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long produktnummer;
-
     private String name;
     private String beschreibung;
-
     private double preis;
-
     private String kategorie;
-
     private int bestand;
-
     private String lieferzeit;
 
 
